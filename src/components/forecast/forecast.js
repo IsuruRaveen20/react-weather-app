@@ -1,16 +1,22 @@
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemPanel } from 'react-accessible-accordion'
+import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from 'react-accessible-accordion'
 
 const ForeCast = ({ data }) => {
     return (
         <>
-            <label className="title">Daitly</label>
+            <label className="title">Daily</label>
             <Accordion allowZeroExpanded>
-                {data.list.splice(0, 7).map((item, idx) => {
-                    <AccordionItem>
-                        <AccordionItemHeading></AccordionItemHeading>
+                {data.list.splice(0, 7).map((item, idx) => (
+                    <AccordionItem key={idx}>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                                <div className='daily-item'>
+                                    <img alt='weather' className='icon-small' src={`icons/${item.weather[0].icon}.png`}/>
+                                </div>
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
                         <AccordionItemPanel></AccordionItemPanel>
                     </AccordionItem>
-                })}
+                ))}
             </Accordion>
         </>
     )

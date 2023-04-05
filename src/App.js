@@ -7,7 +7,7 @@ import ForeCast from './components/forecast/forecast';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null)
-  const [forecastWeather, setForecastWeather] = useState(null)
+  const [forecast, setForecastWeather] = useState(null)
 
   const handleOnSearchChange = (searchData) => {
 
@@ -29,13 +29,13 @@ function App() {
   }
 
   console.log(currentWeather)
-  console.log(forecastWeather)
+  console.log(forecast)
 
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecastWeather && <ForeCast data={forecastWeather}/>}
+      {forecast && <ForeCast data={forecast}/>}
     </div>
   );
 }
