@@ -1,5 +1,6 @@
 .weather {
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0/30%);
     color: #fff;
@@ -11,9 +12,9 @@
 .top,
 .bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .city {
@@ -63,4 +64,34 @@
     text-align: right;
     font-weight: 600;
     font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .weather {
+        width: 90%;
+        max-width: 600px;
+    }
+    
+    .top,
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .weather-icon {
+        width: 80px;
+    }
+    
+    .temperature {
+        font-size: 50px;
+    }
+    
+    .parameter-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .parameter-label {
+        margin-bottom: 5px;
+    }
 }
