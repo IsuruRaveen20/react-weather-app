@@ -4,8 +4,12 @@ import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/current-weather';
 import { WEATHER_API_KEY, WEATHER_API_URL } from './api';
 import ForeCast from './components/forecast/forecast';
+// import dotenv from 'dot';
+
+// dotenv.config();
 
 function App() {
+
   const [currentWeather, setCurrentWeather] = useState(null)
   const [forecast, setForecastWeather] = useState(null)
 
